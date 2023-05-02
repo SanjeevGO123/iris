@@ -9,7 +9,7 @@ Here, instead of using built-in model of sklearn, we will use our own implementa
 ```python
 def sigmoid(z):
     return 1.0 / (1 + np.exp(-z))
-def reglrCostFunction(theta, X, y, lambda_s = 0.1):
+def reglrCost(theta, X, y, lambda_s = 0.1):
     m = len(y)
     h = sigmoid(X.dot(theta))
     J = (1 / m) * (-y.T.dot(np.log(h)) - (1 - y).T.dot(np.log(1 - h)))
@@ -17,7 +17,7 @@ def reglrCostFunction(theta, X, y, lambda_s = 0.1):
     J = J + reg
 
     return J
-def reglrGradient(theta, X, y, lambda_s = 0.1):
+def rg(theta, X, y, lambda_s = 0.1):
     m, n = X.shape
     theta = theta.reshape((n, 1))
     y = y.reshape((m, 1))
@@ -28,8 +28,8 @@ def reglrGradient(theta, X, y, lambda_s = 0.1):
 
     return gd
 def logisticRegression(X, y, theta):
-    result = op.minimize(fun = reglrCostFunction, x0 = theta, args = (X, y),
-                         method = 'TNC', jac = reglrGradient)
+    result = op.minimize(fun = reglrCost, x0 = theta, args = (X, y),
+                         method = 'TNC', jac = rg)
 
     return result.x
 ```
