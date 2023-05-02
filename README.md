@@ -60,7 +60,9 @@ model.add(Dropout(0.2))
 model.add(Dense(3,activation='softmax'))
 model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accuracy'])
 ```
-This is description of the model.We have used Dropout layers to prevent overfitting.
+This is description of the model.
+
+We have used Dropout layers to prevent overfitting.
 We use relu activation function for hidden layers and softmax for output layer. We use categorical crossentropy as loss function and adam as optimizer.
 We have used categorical crossentropy as we have 3 classes and adam as it is a good optimizer for large datasets.
 As adam allows converges faster than other optimizers like sgd(Stochastic Gradient Descent).
