@@ -39,6 +39,11 @@ This code is an implementation of logistic regression using regularization to pr
 The function sigmoid(z) computes the sigmoid function, which maps any real-valued number to a value between 0 and 1. This function is used to calculate the probability that an input example belongs to the positive class in binary classification.
 
 The function reglrCost(theta, X, y, lambda_s) computes the cost function for logistic regression with regularization. The inputs are the parameters theta, the feature matrix X, the target vector y, and the regularization parameter lambda_s. The cost function is calculated as the negative log-likelihood of the training data plus a regularization term. The regularization term is used to shrink the parameters towards zero, which helps to prevent overfitting. The cost function is minimized using the TNC optimization algorithm.
+TNC stands for Truncated Newton Algorithm. It is an optimization algorithm used to find the minimum of a function with constraints. In the context of logistic regression, TNC is used to minimize the cost function with respect to the model parameters, subject to the constraint that the parameters are non-negative.
+
+TNC is a derivative-based optimization algorithm that approximates the Hessian matrix of the cost function using a limited-memory BFGS update. The algorithm is called "truncated" because it limits the step size of the search direction to satisfy the constraints. This helps to ensure that the optimization process does not violate the constraints.
+
+TNC is a popular optimization algorithm for logistic regression because it is efficient and can handle a large number of features. It is also suitable for problems where the cost function is non-convex or has multiple local minima.
 
 The function rg(theta, X, y, lambda_s) computes the gradient of the cost function with respect to the parameters theta. The gradient is calculated as the derivative of the cost function with respect to theta, plus a regularization term. The gradient is used by the optimization algorithm to update the parameters.
 
