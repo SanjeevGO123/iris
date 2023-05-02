@@ -5,7 +5,7 @@ This is a simple example of a machine learning model that predicts the species o
 ## Usage
 ### Using Logistic Regression
 A logistic regression model is trained on the Iris dataset and used to predict the species of an iris flower based on the length and width of its petals and sepals.
-Here,  instead of using built-in model of sklearn, we will use our own implementation of logistic regression model.
+Here,instead of using built-in model of sklearn, we will use our own implementation of logistic regression model.
 ```python
 def sigmoid(z):
     return 1.0 / (1 + np.exp(-z))
